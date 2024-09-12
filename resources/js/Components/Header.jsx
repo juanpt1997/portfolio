@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "@inertiajs/react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ darkMode, setDarkMode }) => {
@@ -15,6 +15,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                         <Link
                             href="/"
                             className="hover:text-gray-700 dark:hover:text-gray-300"
+                            aria-label="Go to homepage"
                         >
                             Juan Tabares
                         </Link>
@@ -25,24 +26,28 @@ const Header = ({ darkMode, setDarkMode }) => {
                         <Link
                             href="#about"
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to About section"
                         >
                             About
                         </Link>
                         <Link
                             href="#projects"
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to Projects section"
                         >
                             Projects
                         </Link>
                         <Link
                             href="#contact"
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to Contact section"
                         >
                             Contact
                         </Link>
                         <Link
                             href="#blog"
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to Blog section"
                         >
                             Blog
                         </Link>
@@ -54,7 +59,8 @@ const Header = ({ darkMode, setDarkMode }) => {
                         <button
                             onClick={() => setDarkMode(!darkMode)}
                             className="text-gray-900 dark:text-gray-100 focus:outline-none p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 flex items-center justify-center"
-                            aria-label="Toggle Dark Mode"
+                            aria-label={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
                         >
                             {/* Sun/Moon Icon */}
                             <FontAwesomeIcon
@@ -68,6 +74,8 @@ const Header = ({ darkMode, setDarkMode }) => {
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
                                 className="text-gray-900 dark:text-gray-100 focus:outline-none"
+                                aria-label="Toggle navigation menu"
+                                title="Toggle navigation menu"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -94,24 +102,28 @@ const Header = ({ darkMode, setDarkMode }) => {
                         <Link
                             href="#about"
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to About section"
                         >
                             About
                         </Link>
                         <Link
                             href="#projects"
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to Projects section"
                         >
                             Projects
                         </Link>
                         <Link
                             href="#contact"
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to Contact section"
                         >
                             Contact
                         </Link>
                         <Link
                             href="#blog"
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            aria-label="Navigate to Blog section"
                         >
                             Blog
                         </Link>
