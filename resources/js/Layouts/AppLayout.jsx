@@ -1,18 +1,34 @@
+import React, { useState, useEffect } from "react";
 import Header from "@/Components/Header";
 import { Head } from "@inertiajs/react";
 
 export default function AppLayout({ title, children }) {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <Head title={title || "My Portfolio"} />
-            <Header />
+    const [darkMode, setDarkMode] = useState(() => {
+        return localStorage.getItem("theme") === "dark";
+    });
 
-            <main className="flex-grow container mx-auto px-4 py-8">
+    // Toggle between light and dark mode, and save preference in localStorage
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark"); // Save preference
+        } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light"); // Save preference
+        }
+    }, [darkMode]);
+
+    return (
+        <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+            <Head title={title || "My Portfolio"} />
+            <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+
+            <main className="flex-grow container mx-auto max-w-full py-8 px-4">
                 {children}
             </main>
 
             <footer className="bg-gray-800 text-white py-6">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto max-w-full px-4">
                     <div className="flex justify-between items-center">
                         {/* Copyright */}
                         <div className="text-sm">
