@@ -15,9 +15,9 @@ const Header = ({ darkMode, setDarkMode }) => {
                         <Link href="/" aria-label="Go to homepage" className="flex items-center">
                             {/* Logo */}
                             <img
-                                src="/img/dev_taba.png"  // Update with your logo path
+                                src="/img/dev-taba.png"  // logo path
                                 alt="Juan Tabares Logo"
-                                className="h-10 w-auto"  // Adjust size as needed
+                                className="h-10 w-auto" 
                             />
                             {/* Text */}
                             <span className="text-2xl font-bold text-gray-900 dark:text-gray-100 ml-2">
