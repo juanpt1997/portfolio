@@ -53,6 +53,7 @@ const HeroSection = () => {
                 <a
                     href="#projects"
                     className="animate-bounce text-gray-700 dark:text-gray-300"
+                    aria-label="Scroll to projects section"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
