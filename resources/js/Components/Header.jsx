@@ -11,13 +11,18 @@ const Header = ({ darkMode, setDarkMode }) => {
             <div className="container mx-auto max-w-full px-4 py-4">
                 <div className="flex justify-between items-center">
                     {/* Logo / Branding */}
-                    <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                        <Link
-                            href="/"
-                            className="hover:text-gray-700 dark:hover:text-gray-300"
-                            aria-label="Go to homepage"
-                        >
-                            Dev Juan Tabares
+                    <div className="flex items-center space-x-2">
+                        <Link href="/" aria-label="Go to homepage" className="flex items-center">
+                            {/* Logo */}
+                            <img
+                                src="/img/dev_taba.png"  // Update with your logo path
+                                alt="Juan Tabares Logo"
+                                className="h-10 w-auto"  // Adjust size as needed
+                            />
+                            {/* Text */}
+                            <span className="text-2xl font-bold text-gray-900 dark:text-gray-100 ml-2">
+                                Dev Juan Tabares
+                            </span>
                         </Link>
                     </div>
 
@@ -59,8 +64,16 @@ const Header = ({ darkMode, setDarkMode }) => {
                         <button
                             onClick={() => setDarkMode(!darkMode)}
                             className="text-gray-900 dark:text-gray-100 focus:outline-none p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 flex items-center justify-center"
-                            aria-label={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                            aria-label={
+                                darkMode
+                                    ? "Switch to Light Mode"
+                                    : "Switch to Dark Mode"
+                            }
+                            title={
+                                darkMode
+                                    ? "Switch to Light Mode"
+                                    : "Switch to Dark Mode"
+                            }
                         >
                             {/* Sun/Moon Icon */}
                             <FontAwesomeIcon
