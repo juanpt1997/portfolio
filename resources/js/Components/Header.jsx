@@ -17,7 +17,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                             className="hover:text-gray-700 dark:hover:text-gray-300"
                             aria-label="Go to homepage"
                         >
-                            Juan Tabares
+                            Dev Juan Tabares
                         </Link>
                     </div>
 
