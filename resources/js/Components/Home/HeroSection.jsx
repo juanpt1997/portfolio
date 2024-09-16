@@ -11,10 +11,23 @@ const HeroSection = () => {
 
     return (
         <section className="hero relative bg-gray-100 dark:bg-gray-900 py-20 min-h-screen flex items-center">
-            <div className="container mx-auto text-center lg:text-left lg:flex lg:items-center lg:justify-between">
-                {/* Left Content */}
+            <div className="container mx-auto flex flex-col lg:flex-row text-center lg:text-left lg:items-center lg:justify-between">
+                {/* Left Content - IMAGE */}
                 <div
-                    className={`lg:w-1/2 ${
+                    className={`relative lg:w-1/2 mt-10 lg:mt-0 order-2 lg:order-1 flex justify-center z-10 ${
+                        isScrolled ? styles["fade-in"] : ""
+                    }`}
+                >
+                    <img
+                        src="/img/hero-img.jpeg"
+                        alt="Juan Tabares - Full Stack Developer"
+                        className="w-1/2 h-1/2 rounded-full shadow-lg object-cover"
+                    />
+                </div>
+                
+                {/* Right Content */}
+                <div
+                    className={`lg:w-1/2 order-1 lg:order-2 ${
                         isScrolled ? styles["fade-in"] : ""
                     }`}
                 >
@@ -32,19 +45,6 @@ const HeroSection = () => {
                     >
                         View My Projects
                     </a>
-                </div>
-
-                {/* Right Content: Image */}
-                <div
-                    className={`relative mt-10 lg:mt-0 lg:w-1/2 flex justify-center z-10 ${
-                        isScrolled ? styles["fade-in"] : ""
-                    }`}
-                >
-                    <img
-                        src="/img/hero-img.jpeg"
-                        alt="Juan Tabares - Full Stack Developer"
-                        className="w-1/2 h-1/2 rounded-t-full rounded-b-full shadow-lg object-cover"
-                    />
                 </div>
             </div>
 
