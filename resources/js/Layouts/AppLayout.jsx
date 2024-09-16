@@ -20,7 +20,7 @@ export default function AppLayout({ title, children }) {
     }, [darkMode]);
 
     return (
-        <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+        <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 dark-mode-transition">
             <Head title={title || "My Portfolio"} />
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 

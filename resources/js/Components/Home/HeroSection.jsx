@@ -10,7 +10,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section className="hero relative bg-gray-100 dark:bg-gray-900 py-20 min-h-screen flex items-center">
+        <section aria-labelledby="hero-heading" className="hero relative bg-gray-100 dark:bg-gray-900 py-20 min-h-screen flex items-center">
             <div className="container mx-auto flex flex-col lg:flex-row text-center lg:text-left lg:items-center lg:justify-between">
                 {/* Left Content - IMAGE */}
                 <div

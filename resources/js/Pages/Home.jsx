@@ -3,7 +3,7 @@ import HeroSection from "@/Components/Home/HeroSection";
 
 export default function Home() {
     return (
-        <AppLayout>
+        <AppLayout title="Home">
             {/* Hero Section */}
             <HeroSection />
 
