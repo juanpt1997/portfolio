@@ -24,7 +24,7 @@ export default function AppLayout({ title, children }) {
             <Head title={title || "My Portfolio"} />
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
-            <main className="flex-grow container mx-auto max-w-full py-8 px-4">
+            <main className="flex-grow container mx-auto max-w-full">
                 {children}
             </main>
 
