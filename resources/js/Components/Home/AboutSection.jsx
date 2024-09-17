@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Using FontAwesome for other icons
-import { faCode, faServer, faTools, faCodePullRequest } from "@fortawesome/free-solid-svg-icons"; // Importing other skill icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode, faServer, faTools, faCodePullRequest } from "@fortawesome/free-solid-svg-icons";
 
 const AboutSection = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +15,10 @@ const AboutSection = () => {
             id="about"
             className="about relative bg-white dark:bg-gray-800 py-16 min-h-screen flex items-center"
         >
-            <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between px-4">
+            {/* Background Lines */}
+            <div className="absolute inset-0 bg-stripes-light dark:bg-stripes opacity-40 pointer-events-none z-0"></div>
+
+            <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between px-4 z-10">
                 {/* Left Column: Personal Info */}
                 <div
                     className={`lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left ${
@@ -76,7 +79,7 @@ const AboutSection = () => {
                         </p>
                     </div>
 
-                    {/* Skill Box - Version Control (with Git SVG) */}
+                    {/* Skill Box - Version Control */}
                     <div className="skill-box bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
                         <FontAwesomeIcon icon={faCodePullRequest} className="text-blue-600 text-3xl mb-4" />
                         <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-2">
@@ -101,7 +104,7 @@ const AboutSection = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-10 w-full flex justify-center">
+            <div className="absolute bottom-10 w-full flex justify-center z-10">
                 <a
                     href="#projects"
                     className="animate-bounce text-gray-700 dark:text-gray-300"
@@ -124,7 +127,7 @@ const AboutSection = () => {
                 </a>
             </div>
 
-            {/* Background Shape */}
+            {/* Background Gradient and Stripes */}
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500 to-blue-300 opacity-20 pointer-events-none z-0"></div>
         </section>
     );
