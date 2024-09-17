@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown  } from "@fortawesome/free-solid-svg-icons";
 
 const HeroSection = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -66,20 +68,7 @@ const HeroSection = () => {
                     className="animate-bounce text-gray-700 dark:text-gray-300"
                     aria-label="Scroll to about section"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 9l-7 7-7-7"
-                        />
-                    </svg>
+                    <FontAwesomeIcon icon={faChevronDown} className="h-8 w-8" />
                 </a>
             </div>
 
