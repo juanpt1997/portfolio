@@ -125,7 +125,7 @@ const AboutSection = () => {
             </div>
 
             {/* Background Shape */}
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-300 to-blue-100 opacity-20 pointer-events-none z-0"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500 to-blue-300 opacity-20 pointer-events-none z-0"></div>
         </section>
     );
 };
