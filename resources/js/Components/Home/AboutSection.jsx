@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faServer, faTools, faCodePullRequest } from "@fortawesome/free-solid-svg-icons";
+import styles from "/resources/css/about.module.css";
 
 const AboutSection = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +17,7 @@ const AboutSection = () => {
             className="about relative bg-white dark:bg-gray-800 py-16 min-h-screen flex items-center"
         >
             {/* Background Lines */}
-            <div className="absolute inset-0 bg-stripes-light dark:bg-stripes opacity-40 pointer-events-none z-0"></div>
+            <div className={`absolute inset-0 ${styles['bg-stripes-light']} dark:${styles['bg-stripes']} opacity-40 pointer-events-none z-0`}></div>
 
             <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between px-4 z-10">
                 {/* Left Column: Personal Info */}
