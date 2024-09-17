@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "/resources/css/hero.module.css"; // Importing CSS file
 
 const HeroSection = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +14,7 @@ const HeroSection = () => {
                 {/* Left Content - IMAGE */}
                 <div
                     className={`relative lg:w-1/2 mt-10 lg:mt-0 order-2 lg:order-1 flex justify-center z-10 ${
-                        isScrolled ? styles["fade-in"] : ""
+                        isScrolled ? "fade-in" : ""
                     }`}
                 >
                     <img
@@ -28,7 +27,7 @@ const HeroSection = () => {
                 {/* Right Content */}
                 <div
                     className={`lg:w-1/2 order-1 lg:order-2 ${
-                        isScrolled ? styles["fade-in"] : ""
+                        isScrolled ? "fade-in" : ""
                     }`}
                 >
                     <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4">
@@ -51,9 +50,9 @@ const HeroSection = () => {
             {/* Scroll Indicator */}
             <div className="absolute bottom-10 w-full flex justify-center">
                 <a
-                    href="#projects"
+                    href="#about"
                     className="animate-bounce text-gray-700 dark:text-gray-300"
-                    aria-label="Scroll to projects section"
+                    aria-label="Scroll to about section"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
