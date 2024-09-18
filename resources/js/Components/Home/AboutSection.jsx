@@ -102,7 +102,7 @@ const AboutSection = () => {
 
                 {/* Right Column: Skills */}
                 <div
-                    className={`lg:w-1/2 grid grid-cols-2 gap-6 ${
+                    className={`lg:w-1/2 grid grid-cols-2 gap-6 mb-10 lg:mb-0 ${
                         isScrolled ? "fade-in" : ""
                     } lg:ml-10`}
                 >

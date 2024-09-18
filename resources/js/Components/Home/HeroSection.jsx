@@ -27,7 +27,7 @@ const HeroSection = () => {
             <div className="container mx-auto flex flex-col lg:flex-row text-center lg:text-left lg:items-center lg:justify-between">
                 {/* Left Content - IMAGE */}
                 <div
-                    className={`relative lg:w-1/2 mt-10 lg:mt-0 order-2 lg:order-1 flex justify-center z-10 ${
+                    className={`relative lg:w-1/2 mt-10 lg:mt-0 order-2 lg:order-1 flex justify-center z-10 mb-10 lg:mb-0${
                         isScrolled ? "fade-in" : ""
                     }`}
                 >
