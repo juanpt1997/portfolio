@@ -28,9 +28,7 @@ const AboutSection = () => {
             <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between px-4 z-10">
                 {/* Left Column: Personal Info */}
                 <div
-                    className={`lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left ${
-                        isScrolled ? "fade-in" : ""
-                    }`}
+                    className={`lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left ${isScrolled ? "fade-in" : ""}`}
                 >
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-6">
                         About Me
@@ -102,9 +100,7 @@ const AboutSection = () => {
 
                 {/* Right Column: Skills */}
                 <div
-                    className={`lg:w-1/2 grid grid-cols-2 gap-6 mb-10 lg:mb-0 ${
-                        isScrolled ? "fade-in" : ""
-                    } lg:ml-10`}
+                    className={`lg:w-1/2 grid grid-cols-2 gap-6 lg:sticky lg:top-20 lg:self-start mb-16 ${isScrolled ? "fade-in" : ""} lg:ml-10`}
                 >
                     {/* Skill Box - Frontend Development */}
                     <div className="skill-box bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
