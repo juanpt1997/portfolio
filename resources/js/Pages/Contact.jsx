@@ -23,14 +23,6 @@ const Contact = () => {
         });
     };
 
-/*     // message disappears after 20 seconds
-    setTimeout(() => {
-        if (flash.message) {
-            let elements = document.getElementsByClassName("flash-message");
-            elements[0].parentNode.removeChild(elements[0]);
-        }
-    }, 20000); */
-
     return (
         <AppLayout title="Contact">
             <div className="py-12 px-4 lg:px-20 min-h-screen flex justify-center items-center">
@@ -80,9 +72,17 @@ const Contact = () => {
                                 }
                                 placeholder="Enter your name"
                                 required
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.name
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             />
-                            {errors.name && <div>{errors.name}</div>}
+                            {errors.name && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.name}
+                                </div>
+                            )}
                         </div>
 
                         <div>
@@ -102,9 +102,17 @@ const Contact = () => {
                                 }
                                 placeholder="Enter your email"
                                 required
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.email
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             />
-                            {errors.email && <div>{errors.email}</div>}
+                            {errors.email && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.email}
+                                </div>
+                            )}
                         </div>
 
                         <div>
@@ -124,9 +132,17 @@ const Contact = () => {
                                 }
                                 placeholder="Subject"
                                 required
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.subject
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             />
-                            {errors.subject && <div>{errors.subject}</div>}
+                            {errors.subject && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.subject}
+                                </div>
+                            )}
                         </div>
 
                         <div>
@@ -146,9 +162,17 @@ const Contact = () => {
                                 placeholder="Type your message here"
                                 required
                                 rows="5"
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.message
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             ></textarea>
-                            {errors.message && <div>{errors.message}</div>}
+                            {errors.message && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.message}
+                                </div>
+                            )}
                         </div>
 
                         <button
