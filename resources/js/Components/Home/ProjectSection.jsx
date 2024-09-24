@@ -5,28 +5,28 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"; // Import GitHub 
 const ProjectSection = () => {
     const projects = [
         {
-            title: "Confidential Project 1",
-            description: "This project involved complex web development...",
-            imageUrl: "/images/project1.jpg",
-            link: "#",
+            title: "CO&TEX S.A.S.",
+            description: "An integrated system to optimize processes across departments such as HR, Quality Control, and Planning. Technologies: PHP, MySQL, jQuery, Bootstrap, Laravel, Livewire.",
+            imageUrl: "/img/coytex-logo.jpg", // Add a path to the CO&TEX logo or a relevant image
+            link: "https://app.siocoytex.com/", // No link to GitHub
             isConfidential: true,
-            ariaLabel: "Confidential Project 1",
+            ariaLabel: "CO&TEX Project",
         },
         {
-            title: "Confidential Project 2",
-            description: "A secure platform built with Vue.js and Node.js...",
-            imageUrl: "/images/project2.jpg",
-            link: "#",
+            title: "Tecnolab - Transportation Management System",
+            description: "A transportation system that tracks vehicles such as buses and vans in real-time using GPS. Technologies: Node.js, Laravel, MySQL, Bootstrap.",
+            imageUrl: "/img/tecnolab-logo.jpeg", // Add a path to the Tecnolab logo or a relevant image
+            link: "https://apps.tecnolab.com.co/sit/",
             isConfidential: true,
-            ariaLabel: "Confidential Project 2",
+            ariaLabel: "Tecnolab Project",
         },
         {
-            title: "Open Source Project 3",
-            description: "An open-source project showcasing web development.",
-            imageUrl: "/images/project3.jpg",
-            link: "https://github.com/juanpt1997/project3",
+            title: "PDC International Corporation",
+            description: "A freelance project built with PHP, jQuery, Bootstrap, and MySQL. The code is available on GitHub.",
+            imageUrl: "/img/pdc-logo.jpg", // Add a path to a relevant PDC logo or image
+            link: "https://www.lnrdigital.com/lnrdigital.com/jpablo/",
             isConfidential: false,
-            ariaLabel: "Open Source Project 3",
+            ariaLabel: "PDC International Corporation Project",
         },
     ];
 
@@ -65,7 +65,7 @@ const ProjectSection = () => {
                         <img
                             src={projects[currentProject].imageUrl}
                             alt={`${projects[currentProject].title} - Project Image`}
-                            className="w-full h-60 object-cover rounded-lg mb-4"
+                            className="w-2/3 h-auto object-cover rounded-lg mb-4"
                         />
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                             {projects[currentProject].title}
