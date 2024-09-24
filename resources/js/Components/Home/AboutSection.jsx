@@ -8,6 +8,7 @@ import {
     faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "/resources/css/about.module.css";
+import { Link } from "@inertiajs/react";
 
 const AboutSection = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -23,12 +24,16 @@ const AboutSection = () => {
             className="about relative bg-white dark:bg-gray-800 py-16 min-h-screen flex items-center"
         >
             {/* Background Lines */}
-            <div className={`absolute inset-0 ${styles['bg-stripes-light']} dark:${styles['bg-stripes']} opacity-40 pointer-events-none z-0`}></div>
+            <div
+                className={`absolute inset-0 ${styles["bg-stripes-light"]} dark:${styles["bg-stripes"]} opacity-40 pointer-events-none z-0`}
+            ></div>
 
             <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between px-4 z-10">
                 {/* Left Column: Personal Info */}
                 <div
-                    className={`lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left ${isScrolled ? "fade-in" : ""}`}
+                    className={`lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left ${
+                        isScrolled ? "fade-in" : ""
+                    }`}
                 >
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-6">
                         About Me
@@ -90,17 +95,20 @@ const AboutSection = () => {
                         software development.
                     </p>
 
-                    <a
-                        href="#contact"
+                    <Link
+                        href={route('contact')}
                         className="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300"
+                        aria-label="Navigate to Contact Page"
                     >
                         Get in Touch
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Right Column: Skills */}
                 <div
-                    className={`lg:w-1/2 grid grid-cols-2 gap-6 lg:sticky lg:top-20 lg:self-start mb-16 ${isScrolled ? "fade-in" : ""} lg:ml-10`}
+                    className={`lg:w-1/2 grid grid-cols-2 gap-6 lg:sticky lg:top-20 lg:self-start mb-16 ${
+                        isScrolled ? "fade-in" : ""
+                    } lg:ml-10`}
                 >
                     {/* Skill Box - Frontend Development */}
                     <div className="skill-box bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
@@ -112,7 +120,8 @@ const AboutSection = () => {
                             Frontend Development
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Bootstrap, TailwindCSS, JavaScript (ES14), jQuery, React (Inertia.js), HTML5, CSS, AJAX
+                            Bootstrap, TailwindCSS, JavaScript (ES14), jQuery,
+                            React (Inertia.js), HTML5, CSS, AJAX
                         </p>
                     </div>
 
@@ -126,7 +135,8 @@ const AboutSection = () => {
                             Backend Development
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            PHP, Laravel, Node.js, MySQL, MariaDB, OOP, Livewire, REST APIs
+                            PHP, Laravel, Node.js, MySQL, MariaDB, OOP,
+                            Livewire, REST APIs
                         </p>
                     </div>
 
@@ -140,7 +150,8 @@ const AboutSection = () => {
                             Version Control
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Git, GitHub, Gitea, Continuous Integration (CI), Code Reviews and Pull Requests
+                            Git, GitHub, Gitea, Continuous Integration (CI),
+                            Code Reviews and Pull Requests
                         </p>
                     </div>
 
@@ -154,7 +165,8 @@ const AboutSection = () => {
                             Tools
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Docker, AWS, SCRUM, Jira, Test-Driven Development (TDD)
+                            Docker, AWS, SCRUM, Jira, Test-Driven Development
+                            (TDD)
                         </p>
                     </div>
                 </div>
