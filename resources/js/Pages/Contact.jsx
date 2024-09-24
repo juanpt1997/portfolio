@@ -1,11 +1,13 @@
 import React from "react";
-import { useForm } from "@inertiajs/react";
+import { useForm, usePage } from "@inertiajs/react";
 import AppLayout from "@/Layouts/AppLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
-    const {data, setData, post, processing, errors} = useForm({
+    const { flash } = usePage().props;
+
+    const { reset, data, setData, post, processing, errors } = useForm({
         name: "",
         email: "",
         subject: "",
@@ -14,8 +16,20 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        post(route("contact.store"));
-    }
+        post(route("contact.store"), {
+            onSuccess: () => {
+                reset();
+            },
+        });
+    };
+
+/*     // message disappears after 20 seconds
+    setTimeout(() => {
+        if (flash.message) {
+            let elements = document.getElementsByClassName("flash-message");
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    }, 20000); */
 
     return (
         <AppLayout title="Contact">
@@ -26,7 +40,7 @@ const Contact = () => {
                     </h2>
                     <p className="text-center text-lg text-gray-700 dark:text-gray-300 mb-10">
                         Feel free to reach out through the form below or connect
-                        with me via {" "}
+                        with me via{" "}
                         <a
                             href="https://www.linkedin.com/in/juan-pablo-tabares-rico-716a591b3/"
                             target="_blank"
@@ -36,6 +50,13 @@ const Contact = () => {
                             LinkedIn.
                         </a>
                     </p>
+
+                    {/* Display flash message */}
+                    {flash?.message && (
+                        <div className="bg-green-500 text-white p-4 mb-4 rounded">
+                            {flash.message}
+                        </div>
+                    )}
 
                     {/* Contact Form */}
                     <form
@@ -54,11 +75,14 @@ const Contact = () => {
                                 id="name"
                                 name="name"
                                 value={data.name}
-                                onChange={(e) => setData("name", e.target.value)}
+                                onChange={(e) =>
+                                    setData("name", e.target.value)
+                                }
                                 placeholder="Enter your name"
                                 required
                                 className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                             />
+                            {errors.name && <div>{errors.name}</div>}
                         </div>
 
                         <div>
@@ -73,11 +97,14 @@ const Contact = () => {
                                 id="email"
                                 name="email"
                                 value={data.email}
-                                onChange={(e) => setData("email", e.target.value)}
+                                onChange={(e) =>
+                                    setData("email", e.target.value)
+                                }
                                 placeholder="Enter your email"
                                 required
                                 className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                             />
+                            {errors.email && <div>{errors.email}</div>}
                         </div>
 
                         <div>
@@ -92,11 +119,14 @@ const Contact = () => {
                                 id="subject"
                                 name="subject"
                                 value={data.subject}
-                                onChange={(e) => setData("subject", e.target.value)}
+                                onChange={(e) =>
+                                    setData("subject", e.target.value)
+                                }
                                 placeholder="Subject"
                                 required
                                 className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                             />
+                            {errors.subject && <div>{errors.subject}</div>}
                         </div>
 
                         <div>
@@ -110,12 +140,15 @@ const Contact = () => {
                                 id="message"
                                 name="message"
                                 value={data.message}
-                                onChange={(e) => setData("message", e.target.value)}
+                                onChange={(e) =>
+                                    setData("message", e.target.value)
+                                }
                                 placeholder="Type your message here"
                                 required
                                 rows="5"
                                 className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                             ></textarea>
+                            {errors.message && <div>{errors.message}</div>}
                         </div>
 
                         <button

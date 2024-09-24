@@ -26,7 +26,7 @@ class ContactController extends Controller
     {
         $contact = Contact::create($request->validated());
 
-        return redirect()->route('contact')->with('message', 'Message sent!');
+        return redirect()->route('contact')->with('message', 'Message sent! Thank you so much for submitting the form, I will reach out to you as soon as I can.');
     }
 
 }
