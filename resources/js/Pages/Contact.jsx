@@ -1,33 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, usePage } from "@inertiajs/react";
 import AppLayout from "@/Layouts/AppLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
+    const { flash } = usePage().props;
+
+    const { reset, data, setData, post, processing, errors } = useForm({
         name: "",
         email: "",
         subject: "",
         message: "",
     });
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Data Submitted: ", formData);
-        alert("Your message has been sent!");
-        setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
+        post(route("contact.store"), {
+            onSuccess: () => {
+                reset();
+            },
         });
     };
 
@@ -40,7 +32,7 @@ const Contact = () => {
                     </h2>
                     <p className="text-center text-lg text-gray-700 dark:text-gray-300 mb-10">
                         Feel free to reach out through the form below or connect
-                        with me via {" "}
+                        with me via{" "}
                         <a
                             href="https://www.linkedin.com/in/juan-pablo-tabares-rico-716a591b3/"
                             target="_blank"
@@ -50,6 +42,13 @@ const Contact = () => {
                             LinkedIn.
                         </a>
                     </p>
+
+                    {/* Display flash message */}
+                    {flash?.message && (
+                        <div className="bg-green-500 text-white p-4 mb-4 rounded">
+                            {flash.message}
+                        </div>
+                    )}
 
                     {/* Contact Form */}
                     <form
@@ -67,12 +66,23 @@ const Contact = () => {
                                 type="text"
                                 id="name"
                                 name="name"
-                                value={formData.name}
-                                onChange={handleChange}
+                                value={data.name}
+                                onChange={(e) =>
+                                    setData("name", e.target.value)
+                                }
                                 placeholder="Enter your name"
                                 required
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.name
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             />
+                            {errors.name && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.name}
+                                </div>
+                            )}
                         </div>
 
                         <div>
@@ -86,12 +96,23 @@ const Contact = () => {
                                 type="email"
                                 id="email"
                                 name="email"
-                                value={formData.email}
-                                onChange={handleChange}
+                                value={data.email}
+                                onChange={(e) =>
+                                    setData("email", e.target.value)
+                                }
                                 placeholder="Enter your email"
                                 required
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.email
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             />
+                            {errors.email && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.email}
+                                </div>
+                            )}
                         </div>
 
                         <div>
@@ -105,12 +126,23 @@ const Contact = () => {
                                 type="text"
                                 id="subject"
                                 name="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
+                                value={data.subject}
+                                onChange={(e) =>
+                                    setData("subject", e.target.value)
+                                }
                                 placeholder="Subject"
                                 required
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.subject
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             />
+                            {errors.subject && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.subject}
+                                </div>
+                            )}
                         </div>
 
                         <div>
@@ -123,17 +155,29 @@ const Contact = () => {
                             <textarea
                                 id="message"
                                 name="message"
-                                value={formData.message}
-                                onChange={handleChange}
+                                value={data.message}
+                                onChange={(e) =>
+                                    setData("message", e.target.value)
+                                }
                                 placeholder="Type your message here"
                                 required
                                 rows="5"
-                                className="w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                className={`w-full px-4 py-2 mt-2 bg-white dark:bg-gray-600 border ${
+                                    errors.message
+                                        ? "border-red-500"
+                                        : "border-gray-300 dark:border-gray-500"
+                                } rounded-lg focus:ring-blue-500 focus:border-blue-500`}
                             ></textarea>
+                            {errors.message && (
+                                <div className="text-red-500 mt-1">
+                                    {errors.message}
+                                </div>
+                            )}
                         </div>
 
                         <button
                             type="submit"
+                            disabled={processing}
                             className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 transition duration-300"
                         >
                             Send Message
