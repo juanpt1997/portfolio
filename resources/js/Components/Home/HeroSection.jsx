@@ -27,7 +27,7 @@ const HeroSection = () => {
             <div className="container mx-auto flex flex-col lg:flex-row text-center lg:text-left lg:items-center lg:justify-between">
                 {/* Left Content - IMAGE */}
                 <div
-                    className={`relative lg:w-1/2 mt-10 lg:mt-0 order-2 lg:order-1 flex justify-center z-10 ${
+                    className={`relative lg:w-1/2 mt-10 lg:mt-0 order-2 lg:order-1 flex justify-center z-10 mb-10 lg:mb-0${
                         isScrolled ? "fade-in" : ""
                     }`}
                 >
@@ -48,10 +48,15 @@ const HeroSection = () => {
                         Hello, I'm{" "}
                         <span className="text-blue-600">Juan Tabares</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
-                        Full Stack Developer crafting engaging web applications.
+                    {/* Subtitle */}
+                    <p className="text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+                        Full Stack Developer dedicated to building high-quality web applications.
                     </p>
 
+                    {/* Experience/Intro Text */}
+                    <p className="text-md md:text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        I specialize in creating solutions that optimize processes and solve real-world problems. With nearly four years of experience in backend and frontend technologies, I focus on developing robust and scalable applications that deliver tangible results for businesses.
+                    </p>
                     <a
                         href="#projects"
                         className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300"

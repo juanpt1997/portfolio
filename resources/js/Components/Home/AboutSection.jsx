@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faServer, faTools, faCodePullRequest, faChevronDown  } from "@fortawesome/free-solid-svg-icons";
+import {
+    faCode,
+    faServer,
+    faTools,
+    faCodePullRequest,
+    faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "/resources/css/about.module.css";
 
 const AboutSection = () => {
@@ -22,26 +28,66 @@ const AboutSection = () => {
             <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between px-4 z-10">
                 {/* Left Column: Personal Info */}
                 <div
-                    className={`lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left ${
-                        isScrolled ? "fade-in" : ""
-                    }`}
+                    className={`lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left ${isScrolled ? "fade-in" : ""}`}
                 >
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-6">
                         About Me
                     </h2>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+
+                    {/* Break text into sections with subtle headings */}
+                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-300 mb-4">
+                        Introduction
+                    </h3>
+                    <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
                         Hi! I'm{" "}
                         <span className="font-bold text-blue-600 dark:text-blue-400">
                             Juan Tabares
                         </span>
-                        , a Full Stack Developer passionate about creating
-                        intuitive web applications that deliver engaging user
-                        experiences.
+                        , a Full Stack Developer from Colombia with nearly four
+                        years of experience creating scalable, user-friendly web
+                        applications. My journey into full stack development
+                        began in 2019 before I graduated with a degree in
+                        Computer Systems Engineering. From the start, I’ve been
+                        passionate about solving complex problems with clean,
+                        efficient code and delivering high-quality software.
                     </p>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                        I specialize in frontend and backend technologies, and I
-                        enjoy solving complex problems to build modern,
-                        responsive, and scalable applications.
+
+                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-300 mb-4">
+                        Career Highlights
+                    </h3>
+                    <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                        I began my career at <strong>CO&TEX S.A.S.</strong>,
+                        where I initially worked with PHP, building a strong
+                        foundation in OOP, MySQL, jQuery, and Bootstrap. As I
+                        progressed, I expanded my skills in MVC architecture,
+                        database management, Laravel, and Livewire. I worked
+                        with a team responsible for creating and managing an
+                        integrated system that optimized processes across
+                        various departments.
+                    </p>
+                    <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                        Later, I led a project at <strong>TECNOLAB</strong>{" "}
+                        focused on a transportation management system. I
+                        implemented GPS tracking using Node.js and managed the
+                        backend with Laravel, while leading the team as SCRUM
+                        Master. I trained the team on industry best practices,
+                        including SCRUM and Git, to ensure the project was
+                        completed on time and to a high standard.
+                    </p>
+
+                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-300 mb-4">
+                        Skills and Interests
+                    </h3>
+                    <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                        I’m passionate about continuously expanding my skill
+                        set. Currently, I’m learning React with Inertia.js.
+                        While I have foundational knowledge in AWS and REST
+                        APIs, I’m excited to deepen my expertise in these areas
+                        as well. Outside of work, I enjoy hiking, playing
+                        volleyball, and keeping up with the latest tech trends.
+                        I believe in the power of teamwork and collaboration,
+                        and I’m always looking forward to the next challenge in
+                        software development.
                     </p>
 
                     <a
@@ -54,51 +100,61 @@ const AboutSection = () => {
 
                 {/* Right Column: Skills */}
                 <div
-                    className={`lg:w-1/2 grid grid-cols-2 gap-6 ${
-                        isScrolled ? "fade-in" : ""
-                    } lg:ml-10`}
+                    className={`lg:w-1/2 grid grid-cols-2 gap-6 lg:sticky lg:top-20 lg:self-start mb-16 ${isScrolled ? "fade-in" : ""} lg:ml-10`}
                 >
                     {/* Skill Box - Frontend Development */}
                     <div className="skill-box bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
-                        <FontAwesomeIcon icon={faCode} className="text-blue-600 text-3xl mb-4" />
+                        <FontAwesomeIcon
+                            icon={faCode}
+                            className="text-blue-600 text-3xl mb-4"
+                        />
                         <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-2">
                             Frontend Development
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            React, TailwindCSS, JavaScript, HTML, CSS
+                            Bootstrap, TailwindCSS, JavaScript (ES14), jQuery, React (Inertia.js), HTML5, CSS, AJAX
                         </p>
                     </div>
 
                     {/* Skill Box - Backend Development */}
                     <div className="skill-box bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
-                        <FontAwesomeIcon icon={faServer} className="text-blue-600 text-3xl mb-4" />
+                        <FontAwesomeIcon
+                            icon={faServer}
+                            className="text-blue-600 text-3xl mb-4"
+                        />
                         <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-2">
                             Backend Development
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Laravel, Node.js, PHP, MySQL
+                            PHP, Laravel, Node.js, MySQL, MariaDB, OOP, Livewire, REST APIs
                         </p>
                     </div>
 
                     {/* Skill Box - Version Control */}
                     <div className="skill-box bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
-                        <FontAwesomeIcon icon={faCodePullRequest} className="text-blue-600 text-3xl mb-4" />
+                        <FontAwesomeIcon
+                            icon={faCodePullRequest}
+                            className="text-blue-600 text-3xl mb-4"
+                        />
                         <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-2">
                             Version Control
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Git, GitHub
+                            Git, GitHub, Gitea, Continuous Integration (CI), Code Reviews and Pull Requests
                         </p>
                     </div>
 
                     {/* Skill Box - Tools */}
                     <div className="skill-box bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
-                        <FontAwesomeIcon icon={faTools} className="text-blue-600 text-3xl mb-4" />
+                        <FontAwesomeIcon
+                            icon={faTools}
+                            className="text-blue-600 text-3xl mb-4"
+                        />
                         <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-2">
                             Tools
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Docker, Nginx, AWS
+                            Docker, AWS, SCRUM, Jira, Test-Driven Development (TDD)
                         </p>
                     </div>
                 </div>
