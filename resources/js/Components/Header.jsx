@@ -12,7 +12,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                 <div className="flex justify-between items-center">
                     {/* Logo / Branding */}
                     <div className="flex items-center space-x-2">
-                        <Link href="/" aria-label="Go to homepage" className="flex items-center">
+                        <Link href={route('home')} aria-label="Go to homepage" className="flex items-center">
                             {/* Logo */}
                             <img
                                 src="/img/dev-taba.png"  // logo path
@@ -29,28 +29,28 @@ const Header = ({ darkMode, setDarkMode }) => {
                     {/* Links - Visible on Desktop */}
                     <nav className="hidden md:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
                         <Link
-                            href="#about"
+                            href={route('home') + '#about'}
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to About section"
                         >
                             About
                         </Link>
                         <Link
-                            href="#projects"
+                            href={route('home') + '#projects'}
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to Projects section"
                         >
                             Projects
                         </Link>
                         <Link
-                            href="#contact"
+                            href={route('contact')}
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to Contact section"
                         >
                             Contact
                         </Link>
                         <Link
-                            href="#blog"
+                            href={route('home')}
                             className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to Blog section"
                         >
@@ -113,28 +113,28 @@ const Header = ({ darkMode, setDarkMode }) => {
                 {isOpen && (
                     <nav className="mt-4 space-y-2 md:hidden">
                         <Link
-                            href="#about"
+                            href={route('home') + '#about'}
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to About section"
                         >
                             About
                         </Link>
                         <Link
-                            href="#projects"
+                            href={route('home') + '#projects'}
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to Projects section"
                         >
                             Projects
                         </Link>
                         <Link
-                            href="#contact"
+                            href={route('contact')}
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to Contact section"
                         >
                             Contact
                         </Link>
                         <Link
-                            href="#blog"
+                            href={route('home')}
                             className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                             aria-label="Navigate to Blog section"
                         >
